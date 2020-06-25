@@ -12,4 +12,10 @@ This project includes a surveillance camera system with any number of clients th
 - Micro-SD-Card (at least class 10 with UHS-I)
 
 ## Installation
+
+<p align="center">
+  <img src="http://www.facing-south.com/img/motionCamera.jpg">
+</p>
+
+
 In the MitionCamera.pdf is a scetch of the build of the Raspberry-Pi with the Motion-Sensor and the Camera. Do not use other Pins on your own and build this scetch like its shown in the scetch. If you have done the installation correctly and power on the Raspberry-Pi without an image, the red LED should be one, if motion gets tracked.
