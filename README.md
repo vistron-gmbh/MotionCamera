@@ -14,7 +14,7 @@ This project includes a surveillance camera system with any number of clients th
 ## Installation
 
 <p align="center">
-  <img src="http://www.facing-south.com/img/motionCamera.jpg">
+  <img src="http://www.facing-south.com/img/motionCamera.jpg" width="800">
 </p>
 
 
@@ -23,5 +23,16 @@ In the MitionCamera.pdf is a scetch of the build of the Raspberry-Pi with the Mo
 ## Pins
 
 <p align="center">
-  <img src="https://roboticsbackend.com/wp-content/uploads/2019/05/raspberry-pi-3-pinout.jpg">
+  <img src="https://roboticsbackend.com/wp-content/uploads/2019/05/raspberry-pi-3-pinout.jpg" width="400">
 </p>
+
+## Usage
+
+The cameras are controlled via the Telegram app. The following commands can be sent to the bot, provided that you are in the same group as the bot:
+
+| Command        | Function           |
+| ------------- |-------------|
+| /start      | Starts the survaillance |
+| /end      | Ends the survaillance      |
+| /activate | Deactivates camera (Admin)      |
+| /deactivate | Activates camera (Admin)      |
