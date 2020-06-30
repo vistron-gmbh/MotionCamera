@@ -26,7 +26,7 @@ def ToggleBot(value):
         led.on()
         print("Motion detected")
         dateTimeObj = datetime.now()
-        camera.capture('/home/pi/Desktop/image%s.jpg' %dateTimeObj)
+        camera.capture('/home/images/image%s.jpg' %dateTimeObj)
         led.off()
 
 @bot.message_handler(commands=['start'])
