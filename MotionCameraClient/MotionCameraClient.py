@@ -15,7 +15,7 @@ GPIO.setup(17,GPIO.OUT)
 bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
 chatID = 621572890
 
-camera.roatation = 180
+camera.rotation = 180
 camera.start_preview()
 
 def ToggleBot(value):
