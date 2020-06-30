@@ -10,13 +10,10 @@ import RPi.GPIO as GPIO
 camera = PiCamera()
 pir = MotionSensor(16)
 cameraOnline = False
-GPIO.setup(17,GPIO.OUT)
+GPIO.setup(18,GPIO.OUT)
 
 bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
 chatID = 621572890
-
-camera.rotation = 180
-camera.start_preview()
 
 def ToggleBot(value):
     if value == True:
@@ -28,13 +25,15 @@ def ToggleBot(value):
 
     while cameraOnline:
         pir.wait_for_motion()
+        camera.start_preview()
         print("Motion detected...")
-        GPIO.output(17,GPIO.HIGH)
+        GPIO.output(18,GPIO.HIGH)
         print("Motion detected")
         camera.capture('/home/images/image.jpg')
         img = PImage.open('/home/images/image.jpg')
         bot.send_photo(chatID, img)
-        GPIO.output(17,GPIO.LOW)
+        GPIO.output(18,GPIO.LOW)
+        camera.stop_preview()
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
