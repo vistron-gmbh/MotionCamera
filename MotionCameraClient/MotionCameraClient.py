@@ -8,6 +8,7 @@ import RPi.GPIO as GPIO
 
 camera = PiCamera()
 cameraOnline = False
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(18,GPIO.OUT)
 GPIO.setup(16,GPIO.IN)
 
