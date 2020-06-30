@@ -30,7 +30,6 @@ def ToggleBot(value):
             camera.start_preview()
             camera.capture('/home/images/image.jpg')
             img = PImage.open('/home/images/image.jpg')
-            bot.send_photo(chatID, img)
             camera.stop_preview()
             GPIO.output(18,GPIO.LOW)
 
