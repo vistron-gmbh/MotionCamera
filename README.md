@@ -36,3 +36,5 @@ The cameras are controlled via the Telegram app. The following commands can be s
 | /end           | Ends the survaillance      |
 | /activate      | Deactivates camera (Admin) |
 | /deactivate    | Activates camera (Admin)   |
+
+If the red LED lights up, the motion sensor has been triggered. After this red LED goes out, the sensor needs 5-6 seconds to perceive a new movement. The green LED flashes twice in quick succession when the camera has taken a picture.
