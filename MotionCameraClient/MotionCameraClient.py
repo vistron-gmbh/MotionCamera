@@ -1,14 +1,17 @@
 from gpiozero import MotionSensor
 from picamera import PiCamera
-from datetime import datetime
 from time import sleep
+from os import listdir
+from PIL import Image as PImage
 import telebot
 
 camera = PiCamera()
 pir = MotionSensor(16)
 cameraOnline = False
 led = LED(17)
+
 bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
+chatID = 621572890
 
 camera.roatation = 180
 camera.start_preview()
@@ -25,8 +28,9 @@ def ToggleBot(value):
         pir.wait_for_motion()
         led.on()
         print("Motion detected")
-        dateTimeObj = datetime.now()
-        camera.capture('/home/images/image%s.jpg' %dateTimeObj)
+        camera.capture('/home/images/image.jpg')
+        img = PImage.open('/home/images/image.jpg')
+        bot.send_photo(chatID, img)
         led.off()
 
 @bot.message_handler(commands=['start'])
