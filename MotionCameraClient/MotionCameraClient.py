@@ -1,5 +1,6 @@
 from gpiozero import MotionSensor
 from picamera import PiCamera
+from datetime import datetime
 from time import sleep
 import telebot
 
@@ -24,7 +25,8 @@ def ToggleBot(value):
         pir.wait_for_motion()
         led.on()
         print("Motion detected")
-        camera.capture('/home/pi/Desktop/image%s.jpg' %i)
+        dateTimeObj = datetime.now()
+        camera.capture('/home/pi/Desktop/image%s.jpg' %dateTimeObj)
         led.off()
 
 @bot.message_handler(commands=['start'])
