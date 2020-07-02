@@ -71,4 +71,4 @@ The cameras are controlled via the Telegram app. The following commands can be s
 | /start         | Starts the survaillance    |
 | /end           | Ends the survaillance      |
 
-If the red LED lights up, the motion sensor has been triggered. After this red LED goes out, the sensor needs 5-6 seconds to perceive a new movement. The green LED flashes twice in quick succession when the camera has taken a picture.
+As soon as the motion detector detects movement, the red LED lights up. As soon as a photo has been taken, the yellow LED starts to flash. The motion sensor needs about 6 seconds after each movement to be able to react to the next movement. During this time the yellow LED flashes slowly. As soon as the motion sensor is ready to record the next motion, the yellow LED flashes three times in quick succession.
