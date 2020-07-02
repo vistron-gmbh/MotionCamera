@@ -1,9 +1,9 @@
 from picamera import PiCamera
-from time import sleep
 from os import listdir
 from PIL import Image as PImage
 
 import telebot
+import time
 import RPi.GPIO as GPIO
 
 camera = PiCamera()
@@ -27,11 +27,41 @@ def ToggleBot(value):
         if GPIO.input(16) == GPIO.HIGH:
             print("Motion detected...")
             camera.start_preview()
-            GPIO.output(18,GPIO.HIGH)
             camera.capture('/home/pi/images/image.jpg')
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
             GPIO.output(18,GPIO.LOW)
-            time.sleep(6)
-            camera.stop_preview()            
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.LOW)
+
+            camera.stop_preview()
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
