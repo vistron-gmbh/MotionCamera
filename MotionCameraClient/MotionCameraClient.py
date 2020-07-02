@@ -73,6 +73,6 @@ def send_welcome(message):
 def echo_all(message):
     bot.reply_to(message, "Wrong Input")
 
-BlinkFast(3)
+BlinkFast(10)
 
 bot.polling()
