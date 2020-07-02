@@ -13,7 +13,6 @@ GPIO.setup(18,GPIO.OUT)
 GPIO.setup(16,GPIO.IN)
 
 bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
-chatID = 621572890
 
 cameraOnline = False
 
@@ -26,7 +25,7 @@ def ToggleBot():
             camera.start_preview()
             time.sleep(0.5)
             camera.capture('/home/pi/images/image.jpg')
-            bot.send_photo(chat_id=621572890, photo=open("/home/pi/images/image.jpg", "rb"))
+            bot.send_photo(chat_id=-460930897, photo=open("/home/pi/images/image.jpg", "rb"))
             camera.stop_preview()
 
             GPIO.output(18,GPIO.HIGH)
