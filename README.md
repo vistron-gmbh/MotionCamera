@@ -27,16 +27,16 @@ The operating system that was installed on the Pi is the Raspberry Pi OS (Raspbe
 ### Libraries/Updates
 Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen einige zusätzliche Pakete, sowie Updated installiert werden, dafür müssen die folgenden Befehle ausgeführt werden:
 
-+ sudo apt update
-+ sudo apt full-upgrade
-+ sudo apt-get install python-picamera
-+ sudo apt install python3-pip
-+ pip3 install pyTelegramBotAPI
-+ sudo apt-get install rpi.gpio
-+ pip install Pillow
-+ sudo apt-get install libopenjp2-7
-+ sudo apt-get install libtiff5
-+ sudo pip3 install systemd
++ ```sudo apt update```
++ ```sudo apt full-upgrade```
++ ```sudo apt-get install python-picamera```
++ ```sudo apt install python3-pip```
++ ```pip3 install pyTelegramBotAPI```
++ ```sudo apt-get install rpi.gpio```
++ ```pip install Pillow```
++ ```sudo apt-get install libopenjp2-7```
++ ```sudo apt-get install libtiff5```
++ ```sudo pip3 install systemd```
 
 ### Directions
 The following folders must be created:
@@ -55,6 +55,48 @@ If you are now in the file path specified under Download after downloading the p
 
 As soon as the software is running, the command / start can be entered in the associated telegram group. Now all captured images are loaded directly into the telegram group.</br>
 As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. You can tell whether the monitoring software could start itself after a waiting time of approx. 1-2 minutes by the flashing yellow LED, which will flash three times.
+
+## Implementing Auto-Start
+
+1. Open a sample unit file using the command as shown below:
+
+```sudo nano /lib/systemd/system/sample.service```
+
+Add in the following text:
+```
+[Unit]
+Description = Motion-Camera
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/github/MotionCamera/MotionCameraClient/MotionCameraClient.py
+WorkingDirectory=/home/pi/github/MotionCamera/MotionCameraClient
+#StandardOutput=inherit
+#StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
+The permission on the unit file needs to be set to 644 :
+
+```sudo chmod 644 /lib/systemd/system/sample.service```
+
+2. Configure systemd
+
+Now the unit file has been defined we can tell systemd to start it during the boot sequence:
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable sample.service
+```
+
+Reboot the Pi and your custom service should run:
+
+```sudo reboot```
 
 ## Usage
 
