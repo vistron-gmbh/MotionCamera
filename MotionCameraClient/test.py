@@ -17,7 +17,7 @@ chatID = 621572890
 
 cameraOnline = false
 
-def ToggleBot():
+def ToggleBot(value):
     global cameraOnline
     while cameraOnline:
         if GPIO.input(16) == GPIO.HIGH:
@@ -68,14 +68,14 @@ def send_welcome(message):
     global cameraOnline
     cameraOnline = true
     print("Cameras online!...")
-    ToggleBot()
+    ToggleBot(True)
 
 @bot.message_handler(commands=['stop'])
 def send_welcome(message):
     global cameraOnline
     cameraOnline = false
     print("Cameras offline!...")
-	ToggleBot()
+	ToggleBot(False)
 
 @bot.message_handler(commands=['deactivate'])
 def send_welcome(message):
