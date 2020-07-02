@@ -68,7 +68,6 @@ def ToggleBot():
             time.sleep(0.1)
             GPIO.output(18,GPIO.LOW)
             time.sleep(0.1)
-            global cameraOnline
 
 def SetCameraValue(value):
     global cameraOnline
