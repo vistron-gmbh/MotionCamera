@@ -28,40 +28,39 @@ def ToggleBot(value):
             print("Motion detected...")
             camera.start_preview()
             camera.capture('/home/pi/images/image.jpg')
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(0.1)
-            GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(0.1)
-            GPIO.output(18,GPIO.LOW)
-
             camera.stop_preview()
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.LOW)
+
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.LOW)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
