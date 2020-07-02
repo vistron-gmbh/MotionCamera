@@ -57,8 +57,8 @@ As soon as the software is running, the command / start can be entered in the as
 As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. You can tell whether the monitoring software could start itself after a waiting time of approx. 1-2 minutes by the flashing yellow LED, which will flash three times.
 
 ## Implementing Auto-Start
-
-1. Open a sample unit file using the command as shown below:
+### Create Service-File
+Open a sample unit file using the command as shown below:
 
 ```sudo nano /lib/systemd/system/sample.service```
 
@@ -85,7 +85,7 @@ The permission on the unit file needs to be set to 644 :
 
 ```sudo chmod 644 /lib/systemd/system/sample.service```
 
-2. Configure systemd
+### Configure systemd
 
 Now the unit file has been defined we can tell systemd to start it during the boot sequence:
 
