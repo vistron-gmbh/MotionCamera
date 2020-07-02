@@ -28,6 +28,7 @@ def ToggleBot():
         if GPIO.input(16) == GPIO.HIGH:
             print("Motion detected...")
             camera.start_preview()
+            time.sleep(0.5)
             camera.capture('/home/pi/images/image.jpg')
             camera.stop_preview()
 
@@ -67,6 +68,7 @@ def ToggleBot():
             time.sleep(0.1)
             GPIO.output(18,GPIO.LOW)
             time.sleep(0.1)
+            global cameraOnline
 
 def SetCameraValue(value):
     global cameraOnline
