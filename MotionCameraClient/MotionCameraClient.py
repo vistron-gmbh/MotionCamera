@@ -33,21 +33,23 @@ def ToggleBot():
             BlinkSlow(6)
             BlinkSlow(3)
 
-def BlinkSlow(times):
-    timesBlinked = 0
-    while timesBlinked != times:
-        GPIO.output(18,GPIO.HIGH)
-        time.sleep(0.1)
-        GPIO.output(18,GPIO.LOW)
-        time.sleep(0.1)
-
 def BlinkFast(times):
     timesBlinked = 0
     while timesBlinked != times:
         GPIO.output(18,GPIO.HIGH)
+        time.sleep(0.1)
+        GPIO.output(18,GPIO.LOW)
+        time.sleep(0.1)
+        timesBlinked = timesBlinked + 1
+
+def BlinkSlow(times):
+    timesBlinked = 0
+    while timesBlinked != times:
+        GPIO.output(18,GPIO.HIGH)
         time.sleep(0.5)
         GPIO.output(18,GPIO.LOW)
         time.sleep(0.5)
+        timesBlinked = timesBlinked + 1
 
 def SetCameraValue(value):
     global cameraOnline
