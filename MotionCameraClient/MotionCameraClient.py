@@ -1,21 +1,23 @@
-import time
-
-time.sleep(45)
-
 from picamera import PiCamera
 from os import listdir
 from PIL import Image as PImage
 
+import time
 import telebot
 import RPi.GPIO as GPIO
 
 camera = PiCamera()
 cameraOnline = False
+
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(18,GPIO.OUT)
 GPIO.setup(16,GPIO.IN)
 
-bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
+f = open("token.txt", "r")
+token = f.readline()
+groupId = f.readline()
+
+bot = telebot.TeleBot(str(token))
 
 cameraOnline = False
 
@@ -28,7 +30,7 @@ def ToggleBot():
             camera.start_preview()
             time.sleep(0.5)
             camera.capture('/home/pi/images/image.jpg')
-            bot.send_photo(chat_id=-460930897, photo=open("/home/pi/images/image.jpg", "rb"))
+            bot.send_photo(chat_id=int(groupId), photo=open("/home/pi/images/image.jpg", "rb"))
             camera.stop_preview()
             BlinkSlow(6)
             BlinkSlow(3)
