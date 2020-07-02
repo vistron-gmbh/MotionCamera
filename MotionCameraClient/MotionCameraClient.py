@@ -19,7 +19,9 @@ groupId = f.readline()
 
 bot = telebot.TeleBot(str(token))
 
-cameraOnline = False
+camera.start_preview()
+BlinkFast(10)
+camera.stop_preview()
 
 def ToggleBot():
     global cameraOnline
@@ -74,7 +76,5 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
     bot.reply_to(message, "Wrong Input")
-
-BlinkFast(10)
 
 bot.polling()
