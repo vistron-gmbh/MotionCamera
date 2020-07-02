@@ -1,9 +1,12 @@
+import time
+
+time.sleep(45)
+
 from picamera import PiCamera
 from os import listdir
 from PIL import Image as PImage
 
 import telebot
-import time
 import RPi.GPIO as GPIO
 
 camera = PiCamera()
@@ -28,6 +31,14 @@ def ToggleBot():
             bot.send_photo(chat_id=-460930897, photo=open("/home/pi/images/image.jpg", "rb"))
             camera.stop_preview()
 
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.5)
+            GPIO.output(18,GPIO.LOW)
+            time.sleep(0.5)
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.5)
+            GPIO.output(18,GPIO.LOW)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
             time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
