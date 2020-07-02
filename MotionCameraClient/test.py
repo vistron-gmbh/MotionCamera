@@ -15,8 +15,8 @@ GPIO.setup(16,GPIO.IN)
 bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
 chatID = 621572890
 
-cameraOnline = false
-botIsRunning = false
+cameraOnline = False
+botIsRunning = False
 
 def ToggleBot():
     global cameraOnline
@@ -79,7 +79,7 @@ def SetCameraValue(value):
             ToggleBot()
 
     if value == True:
-        print("Cameras online!...")        
+        print("Cameras online!...")
     else:
         print("Cameras offline!...")
 
