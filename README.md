@@ -40,18 +40,18 @@ Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen e
 
 ### Directions
 The following folders must be created:
-+ /home/pi/images
-+ /home/pi/github
++ ```/home/pi/images```
++ ```/home/pi/github```
 
 ### Download
 The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder. When this step has been completed, the folder structure should look like this:
 
-+ /home/pi/github/MotionCamera/MotionCameraClient
++ ```/home/pi/github/MotionCamera/MotionCameraClient```
 
 ### Starting Software
 If you are now in the file path specified under Download after downloading the project folder, you can start the bot manually with the following input:
 
-+ python3 MotionCameraClient.py
++ ```python3 MotionCameraClient.py```
 
 As soon as the software is running, the command / start can be entered in the associated telegram group. Now all captured images are loaded directly into the telegram group.</br>
 As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. You can tell whether the monitoring software could start itself after a waiting time of approx. 1-2 minutes by the flashing yellow LED, which will flash three times.
@@ -115,7 +115,7 @@ As soon as the motion detector detects movement, the red LED lights up. As soon 
 
 To create a Telegram bot I recommend following these instructions: [Instructions](https://core.telegram.org/bots). If you follow the individual steps of these instructions, you will receive a unique token that belongs to the bot created and must be kept secret. Otherwise it could happen that the bot can be abused. This received token must be used in line 15 of the MotionCameraClient.py script (replace the "XXXXX" with your token):
 
-+ 15: bot = telebot.TeleBot("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
++ ```15: bot = telebot.TeleBot("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")```
 
 After that you can Invite the bot into your telegram group.
 
@@ -124,7 +124,7 @@ After that you can Invite the bot into your telegram group.
 So that the bot places the recorded surveillance images in the group in which you have invited the bot, the ID of this group has to be determined. To get this ID, I recommend following those instructions: [Group-ID](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id).</br>
 Once the ID has been determined, it must also be entered in the MotionCameraClient.py script. This happens in line 28 and looks like this:
 
-+ 28: bot.send_photo(chat_id=XXXXXX, photo=open("/home/pi/images/image.jpg", "rb"))
++ ```28: bot.send_photo(chat_id=XXXXXX, photo=open("/home/pi/images/image.jpg", "rb"))```
 
 At this point, too, the "XXXXX" must be replaced by the determined group ID.
 
