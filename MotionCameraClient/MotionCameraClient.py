@@ -26,6 +26,7 @@ def ToggleBot():
             camera.start_preview()
             time.sleep(0.5)
             camera.capture('/home/pi/images/image.jpg')
+            bot.send_photo(chat_id=621572890, photo=open("/home/pi/images/image.jpg", "rb"))
             camera.stop_preview()
 
             GPIO.output(18,GPIO.HIGH)
