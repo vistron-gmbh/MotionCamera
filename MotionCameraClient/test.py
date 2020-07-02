@@ -74,14 +74,14 @@ def SetCameraValue(value):
 
     cameraOnline = value
 
-    if botIsRunning == False:
-        if cameraOnline == True:
-            ToggleBot()
-
-    if value == True:
+    if cameraOnline == True:
         print("Cameras online!...")
     else:
         print("Cameras offline!...")
+
+    if botIsRunning == False:
+        if cameraOnline == True:
+            ToggleBot()
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
