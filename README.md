@@ -36,6 +36,7 @@ Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen e
 + pip install Pillow
 + sudo apt-get install libopenjp2-7
 + sudo apt-get install libtiff5
++ sudo pip3 install systemd
 
 ### Directions
 The following folders must be created:
