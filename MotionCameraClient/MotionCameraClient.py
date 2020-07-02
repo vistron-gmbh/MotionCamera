@@ -28,8 +28,7 @@ def ToggleBot(value):
             GPIO.output(18,GPIO.HIGH)
             print("Motion detected...")
             camera.start_preview()
-            camera.capture('/home/images/image.jpg')
-            img = PImage.open('/home/images/image.jpg')
+            camera.capture('/home/pi/images/image.jpg')
             camera.stop_preview()
             GPIO.output(18,GPIO.LOW)
 
