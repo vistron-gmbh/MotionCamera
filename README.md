@@ -31,9 +31,9 @@ Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen e
 + ```sudo apt full-upgrade```
 + ```sudo apt-get install python-picamera```
 + ```sudo apt install python3-pip```
-+ ```pip3 install pyTelegramBotAPI```
++ ```sudo pip3 install pyTelegramBotAPI```
 + ```sudo apt-get install rpi.gpio```
-+ ```pip install Pillow```
++ ```sudo pip3 install Pillow```
 + ```sudo apt-get install libopenjp2-7```
 + ```sudo apt-get install libtiff5```
 + ```sudo pip3 install systemd```
