@@ -90,4 +90,15 @@ def send_welcome(message):
 def echo_all(message):
     bot.reply_to(message, "Wrong Input")
 
+GPIO.output(18,GPIO.LOW)
+time.sleep(0.1)
+GPIO.output(18,GPIO.HIGH)
+time.sleep(0.1)
+GPIO.output(18,GPIO.LOW)
+time.sleep(0.1)
+GPIO.output(18,GPIO.HIGH)
+time.sleep(0.1)
+GPIO.output(18,GPIO.LOW)
+time.sleep(0.1)
+
 bot.polling()
