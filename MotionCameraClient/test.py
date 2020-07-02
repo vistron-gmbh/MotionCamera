@@ -15,16 +15,10 @@ GPIO.setup(16,GPIO.IN)
 bot = telebot.TeleBot("886187441:AAFmuBkGdv4bDJHYaDQVXFWaePyYQic6Eko")
 chatID = 621572890
 
-makePictures = false
+cameraOnline = false
 
-def ToggleBot(value):
-    if value == True:
-        cameraOnline = True
-        print("Cameras Online!..")
-    else:
-        cameraOnline = False
-        print("Cameras Offline!..")
-
+def ToggleBot():
+    global cameraOnline
     while cameraOnline:
         if GPIO.input(16) == GPIO.HIGH:
             print("Motion detected...")
@@ -71,11 +65,17 @@ def ToggleBot(value):
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    ToggleBot(True)
+    global cameraOnline
+    cameraOnline = true
+    print("Cameras online!...")
+    ToggleBot()
 
 @bot.message_handler(commands=['stop'])
 def send_welcome(message):
-	ToggleBot(False)
+    global cameraOnline
+    cameraOnline = false
+    print("Cameras offline!...")
+	ToggleBot()
 
 @bot.message_handler(commands=['deactivate'])
 def send_welcome(message):
