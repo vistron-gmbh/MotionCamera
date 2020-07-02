@@ -65,3 +65,25 @@ The cameras are controlled via the Telegram app. The following commands can be s
 | /end           | Ends the survaillance      |
 
 As soon as the motion detector detects movement, the red LED lights up. As soon as a photo has been taken, the yellow LED starts to flash. The motion sensor needs about 6 seconds after each movement to be able to react to the next movement. During this time the yellow LED flashes slowly. As soon as the motion sensor is ready to record the next motion, the yellow LED flashes three times in quick succession.
+
+## Telegram
+
+### Create bot
+
+To create a Telegram bot I recommend following these instructions: [Instructions](https://core.telegram.org/bots). If you follow the individual steps of these instructions, you will receive a unique token that belongs to the bot created and must be kept secret. Otherwise it could happen that the bot can be abused. This received token must be used in line 15 of the MotionCameraClient.py script (replace the "XXXXX" with your token):
+
++ 15: bot = telebot.TeleBot("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
+After that you can Invite the bot into your telegram group.
+
+### Get Group-ID
+
+So that the bot places the recorded surveillance images in the group in which you have invited the bot, the ID of this group has to be determined. To get this ID, I recommend following those instructions: [Group-ID](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id).</br>
+Once the ID has been determined, it must also be entered in the MotionCameraClient.py script. This happens in line 28 and looks like this:
+
++ 28: bot.send_photo(chat_id=XXXXXX, photo=open("/home/pi/images/image.jpg", "rb"))
+
+At this point, too, the "XXXXX" must be replaced by the determined group ID.
+
+## Finish
+Now that all points have been followed, your own surveillance system should work and the captured images should be sent to the Telegram group. Remember that the recordings may only be taken within the framework of the law. Have fun using it.
