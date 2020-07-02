@@ -84,6 +84,8 @@ def SetCameraValue(value):
     if botIsRunning == False:
         if cameraOnline == True:
             ToggleBot()
+    else:
+        return cameraOnline
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
