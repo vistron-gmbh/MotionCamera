@@ -31,36 +31,41 @@ def ToggleBot(value):
             camera.stop_preview()
 
             GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
-
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
-
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
-
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
-
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
-
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
-            time.sleep(1)
+            time.sleep(0.5)
             GPIO.output(18,GPIO.LOW)
-
-            GPIO.output(18,GPIO.HIGH)
-            time.sleep(0.1)
-            GPIO.output(18,GPIO.LOW)
-
+            time.sleep(0.5)
             GPIO.output(18,GPIO.HIGH)
             time.sleep(0.1)
             GPIO.output(18,GPIO.LOW)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.LOW)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(0.1)
+            GPIO.output(18,GPIO.LOW)
+            time.sleep(0.1)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
