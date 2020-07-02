@@ -68,7 +68,7 @@ As soon as the motion detector detects movement, the red LED lights up. As soon 
 
 ## Telegram
 
-### Create bot
+### Create Bot
 
 To create a Telegram bot I recommend following these instructions: [Instructions](https://core.telegram.org/bots). If you follow the individual steps of these instructions, you will receive a unique token that belongs to the bot created and must be kept secret. Otherwise it could happen that the bot can be abused. This received token must be used in line 15 of the MotionCameraClient.py script (replace the "XXXXX" with your token):
 
