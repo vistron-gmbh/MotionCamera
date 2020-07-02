@@ -26,6 +26,42 @@ In the MitionCamera.pdf is a scetch of the build of the Raspberry-Pi with the Mo
   <img src="https://roboticsbackend.com/wp-content/uploads/2019/05/raspberry-pi-3-pinout.jpg" width="400">
 </p>
 
+## Software
+### Operating-System
+The operating system that was installed on the Pi is the Raspberry Pi OS (Raspberry Pi OS (32-bit) Lite). The image can be found here:
+[Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/)
+
+### Libraries/Updates
+Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen einige zusätzliche Pakete, sowie Updated installiert werden, dafür müssen die folgenden Befehle ausgeführt werden:
+
++ sudo apt update
++ sudo apt full-upgrade
++ sudo apt-get install python-picamera
++ sudo apt install python3-pip
++ pip3 install pyTelegramBotAPI
++ sudo apt-get install rpi.gpio
++ pip install Pillow
++ sudo apt-get install libopenjp2-7
++ sudo apt-get install libtiff5
+
+### Directions
+The following folders must be created:
++ /home/pi/images
++ /home/pi/github
+
+### Download
+The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder. When this step has been completed, the folder structure should look like this:
+
++ /home/pi/github/MotionCamera/MotionCameraClient
+
+### Starting Software
+If you are now in the file path specified under Download after downloading the project folder, you can start the bot manually with the following input:
+
++ python3 MotionCameraClient.py
+
+As soon as the software is running, the command / start can be entered in the associated telegram group. Now all captured images are loaded directly into the telegram group.</br>
+As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. As soon as the Raspberry-Pi is connected to the power, it also tries to start the monitoring software automatically. You can tell whether the monitoring software could start itself after a waiting time of approx. 1-2 minutes by the flashing yellow LED, which will flash three times.
+
 ## Usage
 
 The cameras are controlled via the Telegram app. The following commands can be sent to the bot, provided that you are in the same group as the bot:
@@ -34,7 +70,5 @@ The cameras are controlled via the Telegram app. The following commands can be s
 | -------------  | -------------------------- |
 | /start         | Starts the survaillance    |
 | /end           | Ends the survaillance      |
-| /activate      | Deactivates camera (Admin) |
-| /deactivate    | Activates camera (Admin)   |
 
 If the red LED lights up, the motion sensor has been triggered. After this red LED goes out, the sensor needs 5-6 seconds to perceive a new movement. The green LED flashes twice in quick succession when the camera has taken a picture.
