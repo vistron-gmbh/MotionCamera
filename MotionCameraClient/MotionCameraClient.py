@@ -25,12 +25,13 @@ def ToggleBot(value):
 
     while cameraOnline:
         if GPIO.input(16) == GPIO.HIGH:
-            GPIO.output(18,GPIO.HIGH)
             print("Motion detected...")
             camera.start_preview()
+            GPIO.output(18,GPIO.HIGH)
             camera.capture('/home/pi/images/image.jpg')
-            camera.stop_preview()
             GPIO.output(18,GPIO.LOW)
+            time.sleep(6)
+            camera.stop_preview()            
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
