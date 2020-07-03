@@ -35,7 +35,7 @@ def ToggleBot():
 
 def BlinkFast(times):
     timesBlinked = 0
-    while timesBlinked != times:
+    while int(timesBlinked) != int(times):
         GPIO.output(18,GPIO.HIGH)
         time.sleep(0.1)
         GPIO.output(18,GPIO.LOW)
@@ -44,7 +44,7 @@ def BlinkFast(times):
 
 def BlinkSlow(times):
     timesBlinked = 0
-    while timesBlinked != times:
+    while int(timesBlinked) != int(times):
         GPIO.output(18,GPIO.HIGH)
         time.sleep(0.5)
         GPIO.output(18,GPIO.LOW)
