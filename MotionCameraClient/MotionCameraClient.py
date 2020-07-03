@@ -64,15 +64,15 @@ def SetCameraValue(value):
         print("Cameras offline!...")
 
 @bot.message_handler(commands=['start'])
-def send_welcome(message):
+def StartCamera(message):
     SetCameraValue(True)
 
 @bot.message_handler(commands=['stop'])
-def send_welcome(message):
+def StopCamera(message):
 	SetCameraValue(False)
 
 @bot.message_handler(func=lambda message: True)
-def echo_all(message):
+def EchoAll(message):
     bot.reply_to(message, "Wrong Input")
 
 camera.start_preview()
