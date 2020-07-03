@@ -66,7 +66,12 @@ Set permissions for both folders (you need to be inside the "github"-folder to e
 + ```sudo chmod 777 images```
 
 ### Download
-The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder. When this step has been completed, the folder structure should look like this:
+The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder.
+When you are inside the "github"-folder enter the following command:
+
++ ```sudo git clone https://github.com/Facing-South/MotionCamera.git```
+
+When this step has been completed, the folder structure should look like this:
 
 + ```/home/pi/github/MotionCamera/MotionCameraClient```
 
