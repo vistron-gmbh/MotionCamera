@@ -43,22 +43,35 @@ Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen e
 
 + ```sudo apt update```
 + ```sudo apt full-upgrade```
-+ ```sudo apt-get install python-picamera```
++ ```sudo apt-get install python3-picamera```
 + ```sudo apt install python3-pip```
 + ```sudo pip3 install pyTelegramBotAPI```
 + ```sudo apt-get install rpi.gpio```
++ ```sudo apt-get install python3-dev```
++ ```sudo apt-get install python3-setuptools```
++ ```sudo apt-get install libtiff-dev```
 + ```sudo pip3 install Pillow```
 + ```sudo apt-get install libopenjp2-7```
 + ```sudo apt-get install libtiff5```
 + ```sudo pip3 install systemd```
++ ```sudo apt-get install git```
 
 ### Directions
 The following folders must be created:
 + ```/home/pi/images```
 + ```/home/pi/github```
 
+Set permissions for both folders (you need to be inside the "github"-folder to enter these commands):
++ ```sudo chmod 777 github```
++ ```sudo chmod 777 images```
+
 ### Download
-The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder. When this step has been completed, the folder structure should look like this:
+The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder.
+When you are inside the "github"-folder enter the following command:
+
++ ```sudo git clone https://github.com/Facing-South/MotionCamera.git```
+
+When this step has been completed, the folder structure should look like this:
 
 + ```/home/pi/github/MotionCamera/MotionCameraClient```
 
