@@ -17,8 +17,8 @@ f = open("token.txt", "r")
 token = f.readline()
 groupId = f.readline()
 
-print("Token: " + str(token)
-print("GroupID: " + str(groupId)
+print("Token: " + str(token))
+print("GroupID: " + str(groupId))
 
 bot = telebot.TeleBot(str(token))
 
