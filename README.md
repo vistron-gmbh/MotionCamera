@@ -61,7 +61,10 @@ network={
 }
 ```
 7. Open File: ```sudo nano /lib/dhcpcd/dhcpcd-hooks/10-wpa_supplicant```
-7. Reload network: ```sudo service networking restart```
+8. Search for: ```nl80211,wext```
+9. And change it for: ```wext,nl80211```
+10. Reload network: ```sudo service networking restart```
+11. Reboot: ```sudo Reboot```
 
 ### Libraries/Updates
 Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen einige zusätzliche Pakete, sowie Updated installiert werden, dafür müssen die folgenden Befehle ausgeführt werden:
