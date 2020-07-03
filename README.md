@@ -61,7 +61,7 @@ The following folders must be created:
 + ```/home/pi/images```
 + ```/home/pi/github```
 
-Set permissions for both folders:
+Set permissions for both folders (you need to be inside the "github"-folder to enter these commands):
 + ```sudo chmod 777 github```
 + ```sudo chmod 777 images```
 
