@@ -24,6 +24,13 @@ In the MitionCamera.pdf is a scetch of the build of the Raspberry-Pi with the Mo
 The operating system that was installed on the Pi is the Raspberry Pi OS (Raspberry Pi OS (32-bit) Lite). The image can be found here:
 [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/)
 
+### Auto-Login
+
+1. Open the Raspberry Pi configuration tool with the following command: ```sudo raspi-config```
+2. Choose point 3: ```Boot Options```
+3. Now choose point B2: ```Console Autologin Text console, automatically logged in as 'pi' user```
+4. After a restart, the user pi should now be logged in automatically.
+
 ### Libraries/Updates
 Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen einige zusätzliche Pakete, sowie Updated installiert werden, dafür müssen die folgenden Befehle ausgeführt werden:
 
