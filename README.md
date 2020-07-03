@@ -60,6 +60,7 @@ network={
         phase2="auth=MSCHAPV2"       
 }
 ```
+7. Open File: ```sudo nano /lib/dhcpcd/dhcpcd-hooks/10-wpa_supplicant```
 7. Reload network: ```sudo service networking restart```
 
 ### Libraries/Updates
