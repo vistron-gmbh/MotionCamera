@@ -48,8 +48,16 @@ The operating system that was installed on the Pi is the Raspberry Pi OS (Raspbe
 6. The following must now be added here:</br>
 ```
 network={
-  ssid="YourWLAN"
-  psk="YourWLANPassword"
+        ssid="AU_WiFi"
+        # For hidden SSIDs
+        scan_ssid=1
+        mode=0
+        key_mgmt=WPA-EAP
+        pairwise=CCMP TKIP
+        identity="XXXXXXXX"
+        password="XXXXXXXX"
+        phase1="peaplabel=0"
+        phase2="auth=MSCHAPV2"       
 }
 ```
 7. Reload network: ```sudo service networking restart```
