@@ -60,6 +60,10 @@ The following folders must be created:
 + ```/home/pi/images```
 + ```/home/pi/github```
 
+Set permissions for both folders:
++ ```sudo chmod 777 github```
++ ```sudo chmod 777 images```
+
 ### Download
 The entire repository of the MotionCamera project can be loaded directly from Github into the "github" folder. When this step has been completed, the folder structure should look like this:
 
