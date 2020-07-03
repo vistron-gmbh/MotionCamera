@@ -38,6 +38,22 @@ The operating system that was installed on the Pi is the Raspberry Pi OS (Raspbe
 3. Now choose point P1: ```Camera```
 4. Choose "Yes" to enable the Camera.
 
+### W-LAN
+
+1. Open the Raspberry Pi configuration tool with the following command: ```sudo raspi-config```
+2. Choose point 4: ```Internationalisation Options```
+3. Now choose point I4: ```Change Wi-fi Country``` and set your country-code
+4. Ensure that W-LAN Networks are available: ```sudo iwlist wlan0 scan | egrep "(ESSID)"```
+5. If the expected WLAN network is within range, the configuration can be made in wpa_supplicant.conf to establish the connection:</br> ```sudo nano /etc/wpa_supplicant/wpa_supplicant.conf```
+6. The following must now be added here:</br>
+```
+network={
+  ssid="YourWLAN"
+  psk="YourWLANPassword"
+}
+```
+7. Reload network: ```sudo service networking restart```
+
 ### Libraries/Updates
 Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen einige zusätzliche Pakete, sowie Updated installiert werden, dafür müssen die folgenden Befehle ausgeführt werden:
 
