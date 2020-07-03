@@ -15,8 +15,8 @@ GPIO.setup(16,GPIO.IN)
 
 f = open("token.txt", "r")
 lines = f.readlines()
-token = str(f[0]).strip()
-groupId = str(f[1]).strip()
+token = f[0].strip()
+groupId = f[1].strip()
 
 print("Token: " + str(token))
 print("GroupID: " + str(groupId))
