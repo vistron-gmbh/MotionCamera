@@ -47,6 +47,9 @@ Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen e
 + ```sudo apt install python3-pip```
 + ```sudo pip3 install pyTelegramBotAPI```
 + ```sudo apt-get install rpi.gpio```
++ ```sudo apt-get install python3-dev```
++ ```sudo apt-get install python3-setuptools```
++ ```sudo apt-get install libtiff-dev```
 + ```sudo pip3 install Pillow```
 + ```sudo apt-get install libopenjp2-7```
 + ```sudo apt-get install libtiff5```
