@@ -43,7 +43,7 @@ Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen e
 
 + ```sudo apt update```
 + ```sudo apt full-upgrade```
-+ ```sudo apt-get install python-picamera```
++ ```sudo apt-get install python3-picamera```
 + ```sudo apt install python3-pip```
 + ```sudo pip3 install pyTelegramBotAPI```
 + ```sudo apt-get install rpi.gpio```
