@@ -154,15 +154,21 @@ Reboot the Pi and your custom service should run:
 ```sudo reboot```
 
 ## Usage
+### Power on
+To start the surveillance camera, it is sufficient to connect it to the power provided that an image has been installed. After about 2 minutes, the yellow LED flashes 10 times. This is the sign that the camera can now receive commands from Telegram and thus start monitoring.
 
+### Error
+If the system is unable to connect to the Internet or there are other problems, the yellow LED also flashes 10 times approx. 2 minutes after the power supply, but the flashing does not stop in this case.
+
+### Commands
 The cameras are controlled via the Telegram app. The following commands can be sent to the bot, provided that you are in the same group as the bot:
 
 | Command        | Function                   |
 | -------------  | -------------------------- |
 | /start         | Starts the survaillance    |
-| /end           | Ends the survaillance      |
+| /stop          | Ends the survaillance      |
 
-As soon as the motion detector detects movement, the red LED lights up. As soon as a photo has been taken, the yellow LED starts to flash. The motion sensor needs about 6 seconds after each movement to be able to react to the next movement. During this time the yellow LED flashes slowly. As soon as the motion sensor is ready to record the next motion, the yellow LED flashes three times in quick succession.
+As soon as the motion detector detects movement, the red LED lights up (analog signal ob sensor). As soon as a photo has been taken, the yellow LED starts to flash. The motion sensor needs about 6 seconds after each movement to be able to react to the next movement. During this time the yellow LED flashes slowly. As soon as the motion sensor is ready to record the next motion, the yellow LED flashes three times in quick succession.
 
 ## Telegram
 
