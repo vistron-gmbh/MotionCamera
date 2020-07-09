@@ -38,7 +38,8 @@ The operating system that was installed on the Pi is the Raspberry Pi OS (Raspbe
 3. Now choose point P1: ```Camera```
 4. Choose "Yes" to enable the Camera.
 
-### W-LAN
+### W-LAN (WPA2-Enterprise)
+If you are not using WPA2-Enterprise skip this step and go to W-LAN (WPA2).
 
 1. Open the Raspberry Pi configuration tool with the following command: ```sudo raspi-config```
 2. Choose point 4: ```Internationalisation Options```
@@ -65,6 +66,25 @@ network={
 9. And change it for: ```wext,nl80211```
 10. Reload network: ```sudo service networking restart```
 11. Reboot: ```sudo Reboot```
+
+### W-LAN (WPA2)
+If you are not using WPA2 skip this step but dont forget to connect you LAN directly to your Raspberry-Pi.
+
+1. Open the Raspberry Pi configuration tool with the following command: ```sudo raspi-config```
+2. Choose point 4: ```Internationalisation Options```
+3. Now choose point I4: ```Change Wi-fi Country``` and set your country-code
+4. Ensure that W-LAN Networks are available: ```sudo iwlist wlan0 scan | egrep "(ESSID)"```
+5. If the expected WLAN network is within range, the configuration can be made in wpa_supplicant.conf to establish the connection:</br> 
+```sudo nano /etc/wpa_supplicant/wpa_supplicant.conf```
+6. The following must now be added here:</br>
+```
+network={
+        ssid="testing"
+        psk="testingPassword"     
+}
+```
+7. Reload network: ```sudo service networking restart```
+8. Reboot: ```sudo Reboot```
 
 ### Libraries/Updates
 Um die in unserem Python-Script verwendeten Bibliotheken zu verwenden, müssen einige zusätzliche Pakete, sowie Updated installiert werden, dafür müssen die folgenden Befehle ausgeführt werden:
@@ -155,10 +175,10 @@ Reboot the Pi and your custom service should run:
 
 ## Usage
 ### Power on
-To start the surveillance camera, it is sufficient to connect it to the power provided that an image has been installed. After about 2 minutes, the yellow LED flashes 10 times. This is the sign that the camera can now receive commands from Telegram and thus start monitoring.
+To start the surveillance camera, it is sufficient to connect it to the power provided that an image has been installed. After about 2 minutes, the yellow LED flashes 10 times. It will flash as long as the connectino to the bot could not be established. If the flashing stops, it is the sign that the camera can now receive commands from Telegram and thus start monitoring.
 
 ### Error
-If the system is unable to connect to the Internet or there are other problems, the yellow LED also flashes 10 times approx. 2 minutes after the power supply, but the flashing does not stop in this case.
+If the system is unable to connect to the internet or there are other problems, the yellow LED also flashes 10 times over and over again.
 
 ### Commands
 The cameras are controlled via the Telegram app. The following commands can be sent to the bot, provided that you are in the same group as the bot:
